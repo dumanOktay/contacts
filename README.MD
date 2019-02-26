@@ -30,7 +30,11 @@ MVVM
 
 
 
-Uygulama dummy veri ile çalışmaktır. hem localde hem Firebase ile çalışabilmektedir. Injection classında dataSource un ayarlanması gerekmetedir.  Default olarak Firebase ' bağlıdır. Localde ilk veri assetten çekilir daha sonra güncel veri internal storeage da tutulur.
+Uygulama dummy veri ile çalışmaktır. hem localde hem Firebase ile çalışabilmektedir. Injection classında dataSource un ayarlanması gerekmetedir.  Default olarak Firebase' e bağlıdır. Localde ilk veri assetten çekilir daha sonra güncel veri internal storeage da tutulur.
+
+Mvvm yapısını kurarken Google Samples daki yapıyı örnek aldım.
+
+
 
 
 
