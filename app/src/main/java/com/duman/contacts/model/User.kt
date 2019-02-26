@@ -1,24 +1,31 @@
 package com.duman.contacts.model
 
+import com.google.firebase.database.IgnoreExtraProperties
 import com.poilabs.poiutils.JsonData
 
-data class User(
-    val info: Info
-    , val old: Int
-    , val address: String
+@IgnoreExtraProperties
+class User(
+
+    val info: Info = Info()
+    , val old: Int = 0
+    , val address: String = ""
     , val password: String = ""
     , var phone: String = ""
-)
+) {
+    constructor() : this(Info())
+}
 
-
+@IgnoreExtraProperties
 data class Info(
-    val name: String
-    , var email: String
-    , val image: String
+    val name: String = ""
+    , var email: String = ""
+    , val image: String = ""
 )
 
+@IgnoreExtraProperties
+data class UserData(var userList: List<User>) : JsonData() {
 
-data class UserData private constructor(var userList: List<User>) : JsonData() {
+    constructor() : this(mutableListOf())
 
     override fun save() {
         save(FILE_NAME)

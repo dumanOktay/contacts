@@ -5,14 +5,16 @@ import android.os.Handler
 import com.duman.contacts.model.Info
 import com.duman.contacts.model.User
 import com.duman.contacts.model.UserData
-import com.google.gson.Gson
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.*
 import com.poilabs.poiutils.JsonData
 
-class UserRepository(val context: Context) : UserDataSource {
+class FirebaseUserRepository(val context: Context) : UserDataSource {
 
 
-    var userData: UserData
+    var userData: UserData? = null
 
+    var reference: DatabaseReference? = null
     var mailList = mutableListOf<String>()
 
     var userHashMap = HashMap<String, User>()
@@ -21,28 +23,35 @@ class UserRepository(val context: Context) : UserDataSource {
         JsonData.init(context)
         JsonData.DEBUG = false
 
-        initUserData()
-        userData = UserData.getInstance()
-        for (user in userData.userList) {
-            mailList.add(user.info.email)
-            userHashMap[user.info.email] = user
-        }
-    }
+        FirebaseApp.initializeApp(context)
+        val database = FirebaseDatabase.getInstance()
 
 
-    private fun initUserData() {
-        if (UserData.getInstance().userList.isEmpty()) {
-            val json_string = context.assets.open("users.json").bufferedReader().use {
-                it.readText()
+
+        reference = database.getReference("userData")
+
+        reference?.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            Gson().fromJson(json_string, UserData::class.java).also {
-                it.save()
-            }
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    p0.getValue(UserData::class.java)?.let {
+                        userData = it
 
-        }
+                        userData?.userList?.forEach { user ->
+                            mailList.add(user.info.email)
+                            userHashMap[user.info.email] = user
+                        }
+                    }
+                }
+            }
+        })
+
+
     }
+
 
     override fun getUser(email: String, callback: UserDataSource.GetUserDetailCallback) {
         userHashMap[email]?.let {
@@ -52,7 +61,7 @@ class UserRepository(val context: Context) : UserDataSource {
 
     override fun getContacts(callback: UserDataSource.GetUserListCallback) {
         val infoList = mutableListOf<Info>()
-        userData.userList.forEach {
+        userData?.userList?.forEach {
             infoList.add(it.info)
         }
         callback.onUsersLoaded(infoList)
@@ -75,7 +84,11 @@ class UserRepository(val context: Context) : UserDataSource {
     override fun updateUser(user: User?, callback: UserDataSource.GetUserDetailCallback) {
         user ?: return
 
-        userData.save()
+        userData?.let {
+            reference?.setValue(it)
+            reference?.push()
+        }
+
 
         Handler().postDelayed({ callback.onOnUserLoaded(user) }, 2000)
     }

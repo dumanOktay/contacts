@@ -1,88 +1,81 @@
 {
   "userList": [
     {
+      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
       "info": {
-        "name": "Elijah Wood",
         "email": "wood@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/ayARmqAe9Aab1zg6FjJG0u9MEBo.jpg"
+        "image": "https://image.tmdb.org/t/p/w500/ayARmqAe9Aab1zg6FjJG0u9MEBo.jpg",
+        "name": "Elijah Wood"
       },
-      "password":"123456",
-      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
-      "phone": "0555 512 1212"
+      "old": 0,
+      "password": "123456",
+      "phone": "123456"
     },
     {
+      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
       "info": {
-        "name": "Robin Williams",
         "email": "Williams@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/3vypmub75rLItlC51uJUurNYkW0.jpg"
+        "image": "https://image.tmdb.org/t/p/w500/3vypmub75rLItlC51uJUurNYkW0.jpg",
+        "name": "Robin Williams"
       },
-      "password":"123456",
-      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
+      "old": 0,
+      "password": "123456",
       "phone": "0555 512 1212"
     },
     {
-      "info": {
-        "name": "Brittany Murphy",
-        "email": "Murphy@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/jktbTmFE3TVaKUqPDWw8VZ5rXqc.jpg"
-      },
-      "password":"123456",
       "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
-      "phone": "0555 512 1212"
+      "info": {
+        "email": "murphy@gmail.com",
+        "image": "https://image.tmdb.org/t/p/w500/jktbTmFE3TVaKUqPDWw8VZ5rXqc.jpg",
+        "name": "Brittany Murphy"
+      },
+      "old": 0,
+      "password": "123456",
+      "phone": "123456"
     },
     {
-      "info": {
-        "name": "Hugh Jackman",
-        "email": "Jackman@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/aLvTYCe8Ar3jvqNiWLdHEJFyA32.jpg"
-      },
-      "password":"123456",
       "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
-      "phone": "0555 512 1212"
+      "info": {
+        "email": "jackman@gmail.com",
+        "image": "https://image.tmdb.org/t/p/w500/aLvTYCe8Ar3jvqNiWLdHEJFyA32.jpg",
+        "name": "Hugh Jackman"
+      },
+      "old": 0,
+      "password": "123456",
+      "phone": "123456"
     },
     {
-      "info": {
-        "name": "Nicole Kidman",
-        "email": "Kidman@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/lfW2cDigTcvuoe4k6UfCdGVE1R6.jpg"
-      },
-      "password":"123456",
       "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
-      "phone": "0555 512 1212"
+      "info": {
+        "email": "kidman@gmail.com",
+        "image": "https://image.tmdb.org/t/p/w500/lfW2cDigTcvuoe4k6UfCdGVE1R6.jpg",
+        "name": "Nicole Kidman"
+      },
+      "old": 0,
+      "password": "123456",
+      "phone": "123456"
     },
     {
+      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
       "info": {
-        "name": "Hugo Weaving",
         "email": "Weaving@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/5uKbeYLagpNRVbmBUZ7Njnbsfvy.jpg"
+        "image": "https://image.tmdb.org/t/p/w500/5uKbeYLagpNRVbmBUZ7Njnbsfvy.jpg",
+        "name": "Hugo Weaving"
       },
-      "password":"123456",
-      "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
+      "old": 0,
+      "password": "123456",
       "phone": "0555 512 1212"
     },
     {
-      "info": {
-        "name": "Elizabeth Daily",
-        "email": "Daily@gmail.com",
-        "image": "https://image.tmdb.org/t/p/w500/kGnTMLGU7evSMvpoFQ1ImCP0h1H.jpg"
-      },
-      "password":"123456",
       "address": "30 Vassar Rd, Poughkeepsie, NY 12603,USA",
-      "height": 170,
-      "weight": 58,
-      "phone": "0555 512 1212"
+      "info": {
+        "email": "daily@gmail.com",
+        "image": "https://image.tmdb.org/t/p/w500/kGnTMLGU7evSMvpoFQ1ImCP0h1H.jpg",
+        "name": "Elizabeth Daily"
+      },
+      "old": 0,
+      "password": "123456",
+      "phone": "123456"
     }
   ]
 }
