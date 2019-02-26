@@ -8,7 +8,7 @@ class User(
 
     val info: Info = Info()
     , val old: Int = 0
-    , val address: String = ""
+    , var address: String = ""
     , val password: String = ""
     , var phone: String = ""
 ) {

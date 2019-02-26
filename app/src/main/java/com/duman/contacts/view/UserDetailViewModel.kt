@@ -7,6 +7,9 @@ import android.view.View
 import com.duman.contacts.data.UserDataSource
 import com.duman.contacts.model.User
 import com.duman.contacts.utils.isValidMail
+import android.content.Intent
+import android.net.Uri
+
 
 class UserDetailViewModel(private var dataSource: UserDataSource) : ViewModel(),
     UserDataSource.GetUserDetailCallback {
@@ -40,12 +43,22 @@ class UserDetailViewModel(private var dataSource: UserDataSource) : ViewModel(),
             mCurrentUser?.info?.email = emailValue
         }
 
-        val phoneValue = phone.value
-        if (phoneValue != null) {
-            mCurrentUser?.phone = phoneValue
+        val addressValue = address.value
+        if (addressValue != null) {
+            mCurrentUser?.address = addressValue
         }
         progressVisibility.set(View.VISIBLE)
         dataSource.updateUser(mCurrentUser,this)
+
+    }
+
+    fun onMailClick(view: View){
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.data = Uri.parse("mailto:"+mCurrentUser?.info?.email)
+        view.context.startActivity(emailIntent)
+    }
+
+    override fun onError() {
 
     }
 }

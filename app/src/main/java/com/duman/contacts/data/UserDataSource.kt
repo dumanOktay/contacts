@@ -37,6 +37,8 @@ interface UserDataSource {
 
     interface GetUserDetailCallback{
         fun onOnUserLoaded(user: User)
+
+        fun onError()
     }
 
 

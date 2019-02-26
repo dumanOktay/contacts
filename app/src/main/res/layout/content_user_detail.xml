@@ -53,7 +53,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@={model.address}"
-                            android:hint="@string/_adress"/>
+                            android:hint="@string/_address"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
                         tools:text="Oktay"

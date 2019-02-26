@@ -8,12 +8,12 @@ import com.duman.contacts.data.UserRepository
 object Injection {
 
     /**
-     * Work on Local Data
+     * work with Local Data
      */
-    fun provideMoveRepository(app: Application) = UserRepository(app.applicationContext)
+//    fun provideMoveRepository(app: Application) = UserRepository(app.applicationContext)
 
     /**
      * work with Firebase data
      */
-//    fun provideMoveRepository(app: Application) = FirebaseUserRepository(app.applicationContext)
+    fun provideMoveRepository(app: Application) = FirebaseUserRepository(app.applicationContext)
 }
