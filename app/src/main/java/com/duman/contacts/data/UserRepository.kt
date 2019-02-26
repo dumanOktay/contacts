@@ -13,8 +13,6 @@ class UserRepository(val context: Context) : UserDataSource {
 
     var userData: UserData
 
-    var mailList = mutableListOf<String>()
-
     var userHashMap = HashMap<String, User>()
 
     init {
@@ -24,7 +22,6 @@ class UserRepository(val context: Context) : UserDataSource {
         initUserData()
         userData = UserData.getInstance()
         for (user in userData.userList) {
-            mailList.add(user.info.email)
             userHashMap[user.info.email] = user
         }
     }

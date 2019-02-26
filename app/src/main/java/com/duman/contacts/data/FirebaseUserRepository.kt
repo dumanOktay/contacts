@@ -15,7 +15,6 @@ class FirebaseUserRepository(val context: Context) : UserDataSource {
     var userData: UserData? = null
 
     var reference: DatabaseReference? = null
-    var mailList = mutableListOf<String>()
 
     var userHashMap = HashMap<String, User>()
 
@@ -41,7 +40,6 @@ class FirebaseUserRepository(val context: Context) : UserDataSource {
                         userData = it
 
                         userData?.userList?.forEach { user ->
-                            mailList.add(user.info.email)
                             userHashMap[user.info.email] = user
                         }
                     }
