@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+
+        <variable name="model" type="com.duman.contacts.view.LoginViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.LoginFragment" android:id="@+id/frameLayout">
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{model.emailError}"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button" android:id="@+id/textInputLayout2"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintVertical_bias="0.37">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/user_email"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={model.email}"
+                    android:hint="@string/_email"/>
+        </android.support.design.widget.TextInputLayout>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->model.onLoginClick()}"
+                android:id="@+id/button" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.869" app:layout_constraintVertical_bias="0.613"
+                tools:text="@string/_login" android:text="@string/_login"/>
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{model.passwordError}"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button" android:id="@+id/textInputLayout"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintVertical_bias="0.68">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/user_password"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={model.passWord}"
+                    android:hint="@string/_password"/>
+        </android.support.design.widget.TextInputLayout>
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar" app:layout_constraintEnd_toStartOf="@+id/button"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:visibility="@{model.progressVisibility}"
+                app:layout_constraintHorizontal_bias="0.502" app:layout_constraintTop_toTopOf="@+id/button"
+                app:layout_constraintBottom_toBottomOf="@+id/button"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
