@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Contacts</string>
     <string name="_login">Login</string>
-    <string name="_error_check_warning">Check your mail</string>
-    <string name="_user_not_found">Your mail is not found.</string>
-    <string name="_password_not_valid">Password not valid</string>
+    <string name="_error_check_warning">Incorrect mail</string>
+    <string name="_user_not_found">We cannot find an account with that email address.</string>
+    <string name="_password_not_valid">Incorrect password</string>
     <string name="_server_error">System error. Try again</string>
     <string name="title_activity_user_detail">Detail</string>
     <string name="large_text">
